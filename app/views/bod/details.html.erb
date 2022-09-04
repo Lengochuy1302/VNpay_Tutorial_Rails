@@ -147,7 +147,7 @@ border-transparent
                     <h2 class="my-5 text-1.5xl font-semibold">Các nhà hảo tâm đã đóng góp</h2>
 
                     <div class="border border-gray-200 rounded px-4 pt-1.5 pb-3">
-                      <div id="cls_bmtu_show"
+                      <div id="cls_bmt_showtitle"
                         class="flex items-center justify-between text-sm text-gray-700 font-semibold py-2 border-b border-gray-100 last:border-0">
                         <div class="w-12 mr-1 flex items-center ">
                           <div
@@ -284,7 +284,7 @@ border-transparent
                 <div id="nhahaotam">
                   <div class="border border-gray-200 rounded px-4 pt-1.5 pb-3">
                     <h2 class="my-5 text-1.5xl font-semibold">Các nhà hảo tâm đã đóng góp</h2>
-                    <div id="cls_bmtu_show"
+                    <div id="cls_bmt_showtitlev"
                       class="flex items-center justify-between text-sm text-gray-700 font-semibold py-2 border-b border-gray-100 last:border-0">
                       <div class="w-12 mr-1 flex items-center ">
                         <div
@@ -497,9 +497,11 @@ border-transparent
         </script>
         <script>
           var vnp_Name = "<%= session[:vnp_Name] %>"
-          document.getElementById("cls_bmtu_show").style.display = "none";
-          if (vnp_Name != "" || vnp_Name != null) {
-            document.getElementById("cls_bmtu_show").style.display = "block";
+          document.getElementById("cls_bmt_showtitle").style.display = "none";
+          document.getElementById("cls_bmt_showtitlev").style.display = "none";
+          if (vnp_Name != "") {
+            document.getElementById("cls_bmt_showtitle").style.display = "block";
+            document.getElementById("cls_bmt_showtitlev").style.display = "block";
           }
         </script>
 </body>

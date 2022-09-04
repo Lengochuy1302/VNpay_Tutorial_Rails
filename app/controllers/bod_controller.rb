@@ -3,6 +3,9 @@ class BodController < ApplicationController
   end
 
   def details
+    if session[:vnp_PayDate] == nil
+      session[:vnp_PayDate] = Time.zone.now.strftime("%Y%m%d%H%M%S").to_time.strftime('%Y-%m-%d %H:%M:%S')
+    end
   end
 
   def checkouts
