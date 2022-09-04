@@ -220,9 +220,8 @@
     </script>
     <script>
         var strTitle = "<%= session[:strTitle] %>"
-        document.getElementById("cls_bmtu_show").style.display = "none";
-        if (strTitle != "") {
-            document.getElementById("cls_bmtu_show").style.display = "block";
+        if (strTitle == "") {
+            document.getElementById("cls_bmtu_show").style.display = "none";
         }
     </script>
 </body>
