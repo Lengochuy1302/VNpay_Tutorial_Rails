@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="vi ">
+
+<head>
+  <meta charSet="utf-8" />
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, viewport-fit=cover" />
+  <style>
+    table, th, td {
+      border: 1px dashed #ce000083;
+    }
+    </style>
+</head>
+
+<body>
+  <nav
+    class="jsx-ddfb0b416b0db288 header-desktop  sticky top-0 z-40 hidden border-b border-gray-200   bg-white/95 shadow-sm  backdrop-blur transition-transform lg:block">
+    <div class="jsx-ddfb0b416b0db288 text-md mx-auto flex w-full max-w-6xl items-center justify-between px-6 lg:px-8">
+      <div class="jsx-ddfb0b416b0db288 flex-1 px-3">
+        <nav class="jsx-ddfb0b416b0db288 flex flex-row flex-nowrap justify-start">
+          <div class="jsx-ddfb0b416b0db288 menu relative ">
+            <%= link_to "Trang chủ" , new_path, :class=> "block cursor-pointer whitespace-nowrap px-2 py-5
+              font-bold transition-all text-pink-600" %>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+  </nav>
+  <div id="__next" data-reactroot="">
+    <main class="soju-wrapper  lg:mt-0 ">
+      <section id="block-297" data-index="2" data-type="1" class="">
+        <div class="py-8 md:py-10 lg:py-14 bg-gray-50" style="--grad-rgb-color:250 250 250">
+          <div class="max-w-6xl mx-auto w-full px-5 md:px-8 lg:px-8 ">
+            <div class="mb-5 text-center md:mb-8" id="section-article">
+                <h2 class="text-2xl font-bold lg:text-3xl cls-bmtu-text-red">Dữ liệu trả về</h2>
+              </div>
+                <table style="width:100%">
+                    <tr>
+                        <th>Name</th>
+                        <th>Value</th>
+                        <th>Description</th>
+                      </tr>
+                      <tr>
+                        <td>Merchant ID</td>
+                        <td><%= session[:vnp_TmnCode] %></td>
+                        <td>Được cấp bởi VNPAY</td>
+                      </tr>
+                    <tr>
+                        <td>Merchant Name</td>
+                        <td>VNPAY Demo</td>
+                        <td>Tên Website Merchant</td>
+                    </tr>
+                    <tr>
+                        <td>Merchant Transaction Reference</td>
+                        <td><%= session[:vnp_TxnRef] %></td>
+                        <td>Mã GD của website merchant</td>
+                    </tr>
+                    <tr>
+                        <td>Transaction Info</td>
+                        <td><%= session[:vnp_OrderInfo] %></td>
+                        <td>Thông tin mô tả từ website merchant</td>
+                    </tr>
+                    <tr>
+                        <td>Amount</td>
+                        <td><%= number_to_currency(session[:vnp_Amount],precision: 0, unit: "" ) %></td>
+                        <td>Số tiền được thanh toán</td>
+                    </tr>
+                    <tr>
+                        <td>Card Type</td>
+                        <td><%= session[:vnp_CardType] %></td>
+                        <td>Loại tài khoản/thẻ khách hàng sử dụng</td>
+                    </tr>
+                    <tr>
+                        <td>Transaction Response Code</td>
+                        <td><%= session[:vnp_ResponseCode] %></td>
+                        <td>Trạng thái GD</td>
+                    </tr>
+                    <tr>
+                        <td>Message</td>
+                        <td><%= session[:dataResponseCode] %></td>
+                        <td>Thông báo từ cổng thanh toán</td>
+                    </tr>
+                    <tr>
+                        <td>Create Date</td>
+                        <td><%= session[:vnp_CreateDate] %></td>
+                        <td>Thời gian tạo thanh toán</td>
+                    </tr>
+                    <tr>
+                        <td>Pay Date</td>
+                        <td><%= session[:vnp_PayDate] %></td>
+                        <td>Thời gian thanh toán</td>
+                    </tr>
+                    <tr>
+                        <td>Bank Code</td>
+                        <td><%= session[:vnp_BankCode] %></td>
+                        <td>Ngân hàng thanh toán</td>
+                    </tr>
+                  </table>
+
+      
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+  </div>
+  <%= javascript_include_tag "jquery-1.11.1.min" %>
+  <%= javascript_include_tag "jquery.validate.min" %>
+      <%= javascript_include_tag "additional-methods.min" %>
+      <script>
+          jQuery.ajax({
+              type: 'GET',
+              dataType: "json",
+              url: "/checkouts",
+              success: function (data) {
+                   
+              }
+          });
+      </script>
+</body>
+
+</html>

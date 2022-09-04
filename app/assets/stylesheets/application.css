@@ -1,0 +1,159 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+ 
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+.small {
+  margin-bottom: 20px;
+}
+
+.detail {
+  margin-top: 25px;
+}
+
+.fa-solid,
+.cls-bmtu-back {
+  margin-top: 30px;
+  color: #ce0000;
+  font-size: 20px;
+}
+
+.cls-bmtu-progress {
+  --tw-bg-opacity: 1;
+  background-color: #ce0000;
+}
+
+.cls-bmtu-btn-donate {
+  display: inline-block;
+  border-radius: 0.375rem;
+  border-width: 1px;
+  font-style: italic;
+  font-weight: 850;
+  --tw-border-opacity: 1;
+  border-color: #ce0000;
+  --tw-bg-opacity: 1;
+  background-color: #ce0000;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  font-size: .875rem;
+  line-height: 1.25rem;
+  color: rgb(255 255 255/var(--tw-text-opacity));
+  --tw-text-opacity: 0.95;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+  transition-duration: .15s;
+}
+
+.cls-bmtu-btn-donate:hover {
+  background-color: #d64e4e;
+  border-color: #d64e4e;
+}
+
+ 
+
+.cls-bmtu-text-red {
+  color: #ce0000;
+}
+
+.cls-bmtu-hover :hover {
+  color: #ce0000;
+}
+
+.cls-input-amount {
+  border: 2px dashed rgb(218, 218, 218);
+  width: 100%;
+  padding: 6px;
+  border-radius: 5px;
+  font-size: 20px;
+  text-align: center;
+  font-weight: bolder;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.text-orange-400 {
+  background-color: #f3f3f3;
+}
+
+.tm-bg-primary-darkv {
+  background-color: #ffffff;
+  border-radius: 10px;
+  }
+
+.height {
+  height: 50px;
+  }
+  
+  .form-controlv {
+  background-color: #54657d;
+  color: #fff;
+  border: 0;
+  padding: 19px 18px;
+  border-radius: 0;
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  }
+  
+  .tm-product-img-dummyv {
+  max-width: 100%;
+  height: 240px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  border: 1px dashed #a3a4a5;
+  }
+  
+  #upload-image {
+  display: none;
+  }
+  
+  #preview img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  }
+
+  #cls_bmtu_preview img {
+    width: 100%;
+  height: 100%;
+  }

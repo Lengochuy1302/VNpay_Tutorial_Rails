@@ -1,0 +1,103 @@
+<div class="row tm-edit-product-row">
+    <div class="col-xl-6 col-lg-6 col-md-12">
+        <form action="" class="tm-edit-product-form">
+            <div class="form-groupv mb-3">
+                <%= f.label :title %>
+                    <%= f.text_field :title, :id=> "title",:name=> "txt_title", :class => "form-controlv height
+                        validate" %>
+            </div>
+            <div class="form-groupv mb-3">
+                <%= f.label :content %>
+                    <%= f.text_area(:content, size: '7x7' , :id=> "content",:name=> "txt_content", :class =>
+                        "form-controlv
+                        validate") %>
+            </div>
+            <div class="form-groupv mb-3">
+                <%= f.label :amount %>
+                    <%= f.number_field :amount, :id=> "amount",:name=> "txt_amount", :class => "form-controlv height
+                        validate", :placeholder=>"50.000 VND" %>
+            </div>
+            <div class="form-groupv mb-3">
+                <%= f.label :expiredate %>
+                    <%= f.date_field :expiredate, :name=> "dt_birthday", :id=> "dt_birthday", :class =>"form-controlv
+                        height validate",
+                        :value=> Time.now.strftime('%Y-%m-%d'),
+                        min:Time.now.strftime('%Y-%m-%d') %>
+            </div>
+
+    </div>
+    <div class="col-xl-6 col-lg-6 col-md-12 mx-auto mb-4">
+        <div class="tm-product-img-dummyv mx-auto" id="preview">
+            <i class="fas fa-cloud-upload-alt" id="icon" style="
+            color: #ce0000;  
+            background: #d1d1d1;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            text-align: center;
+            padding-top: 15px;
+            font-size: 22px;" onclick="document.getElementById('upload-image').click();"></i>
+        </div>
+        <div class="custom-file mt-3 mb-3">
+            <%= f.fields_for :item_photos do |p| %>
+                <%= p.file_field :photo, multiple: true, name: "item_photos[photo][]" , id: "upload-image" %>
+                    <% end %>
+                        <input type="button"
+                            class="btn    
+                        border-red border-pink-600 cls-bmtu-text-red md:group-hover:bg-pink-50 btn-block text-uppercase"
+                            value="Upload Image" onclick="document.getElementById('upload-image').click();" />
+        </div>
+        <%= javascript_include_tag "jquery-1.11.1.min" %>
+            <%= javascript_include_tag "jquery.validate.min" %>
+                <%= javascript_include_tag "additional-methods.min" %>
+                    <script>
+                        $("#upload-image").on("change", function () {
+                            var preview = document.querySelector('#preview');
+                            var files = document.querySelector('input[type=file]').files;
+
+
+                            function readAndPreview(file) {
+
+                                if (/\.(jpe?g|png|gif)$/i.test(file.name)) {
+                                    var reader = new FileReader();
+                                    reader.addEventListener("load", function () {
+                                        var image = new Image();
+                                        image.height = 100;
+                                        image.width = 100;
+                                        image.title = file.name;
+                                        image.src = this.result;
+                                        jQuery.ajax({
+                                            data: {
+                                                strImage: file.name,
+                                            },
+                                            type: 'POST',
+                                            dataType: "json",
+                                            url: "/getImage",
+                                        });
+                                        window.localStorage.setItem('link', JSON.stringify(this.result))
+                                        preview.appendChild(image);
+
+                                    }, false);
+
+                                    reader.readAsDataURL(file);
+                                    document.getElementById("icon").style.display = "none";
+
+                                }
+
+                            }
+
+                            if (files) {
+                                [].forEach.call(files, readAndPreview);
+                            }
+                        })
+
+                    </script>
+    </div>
+    <div class="col-12">
+        <button type="submit"
+            class="btn btn    
+        border-red border-pink-600 cls-bmtu-text-red md:group-hover:bg-pink-50 btn-block   btn-block text-uppercase">Add News
+            Now</button>
+    </div>
+    </form>
+</div>

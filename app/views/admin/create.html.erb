@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="vi ">
+
+<head>
+    <meta charSet="utf-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, viewport-fit=cover" />
+    <script src="https://kit.fontawesome.com/3a67e5d2e3.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700" />
+    <link rel="stylesheet" href="https://technext.github.io/product-admin/css/bootstrap.min.css" />
+    <%= stylesheet_link_tag "application"  %>
+
+</head>
+
+<body>
+    <nav style="height: 50px;"
+        class="jsx-ddfb0b416b0db288 header-desktop  sticky top-0 z-40 hidden border-b border-gray-200   bg-white/95 shadow-sm  backdrop-blur transition-transform lg:block">
+        <div style="height: 50px;"
+            class="jsx-ddfb0b416b0db288 text-md mx-auto flex w-full max-w-6xl items-center justify-between px-6 lg:px-8">
+            <div style="height: 50px;" class="jsx-ddfb0b416b0db288 flex-1 px-3">
+                <nav style="height: 50px;" class="jsx-ddfb0b416b0db288 flex flex-row flex-nowrap justify-start">
+                    <div style="height: 50px;" class="jsx-ddfb0b416b0db288 menu relative ">
+                        <%= link_to "Back" , admin_path, :style => "margin-top: -35px;", :class=> "block cursor-pointer whitespace-nowrap px-2 py-5
+                            font-bold transition-all text-gray-600 hover:text-gray-900" %>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+    </nav>
+    <div id="__next" data-reactroot="">
+        <main class="soju-wrapper  lg:mt-0 ">
+            <section id="block-297" data-index="2" data-type="1" class="">
+                <div class="py-8 md:py-10 lg:py-14 bg-gray-50" style="--grad-rgb-color:250 250 250">
+                    <div class="max-w-6xl mx-auto w-full px-5 md:px-8 lg:px-8 ">
+
+
+                        <div class="container tm-mt-big tm-mb-big">
+                            <div class="row">
+                                <div class="col-xl-9 col-lg-10 col-md-12 col-sm-12 mx-auto">
+                                    <div class="tm-bg-primary-darkv tm-block tm-block-h-auto">
+                                        <%= form_for(:admin, url: insert_path) do |f| %>
+                                            <%= render partial: "admin/form" , :locals=>{:f => f} %>
+                                                <% end %>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+    </div>
+    <script src="https://technext.github.io/product-admin/js/jquery-3.3.1.min.js"></script>
+    <script src="https://technext.github.io/product-admin/js/bootstrap.min.js"></script>
+</body>
+
+</html>
