@@ -203,8 +203,9 @@
     </script>
     <script>
         var strTitle = "<%= session[:strTitle] %>"
+        console.log(strTitle);
         document.getElementById("cls_bmtu_show").style.display = "none";
-        if (strTitle != "" || strTitle != null) {
+        if (strTitle != "") {
             document.getElementById("cls_bmtu_show").style.display = "block";
         }
     </script>
