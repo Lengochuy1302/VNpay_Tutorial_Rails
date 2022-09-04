@@ -212,11 +212,10 @@
     <script>
 
         var preview = document.querySelector('#cls_bmtu_preview');
-        if (/\.(jpe?g|png|gif)$/i.test("<%= session[:oPhotos] %>")) {
             var image = new Image();
             image.src = JSON.parse(localStorage.getItem('link'));
             preview.appendChild(image);
-        }
+    
     </script>
     <script>
         var strTitle = "<%= session[:strTitle] %>"
