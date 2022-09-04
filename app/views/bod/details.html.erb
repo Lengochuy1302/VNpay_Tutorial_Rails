@@ -497,11 +497,10 @@ border-transparent
         </script>
         <script>
           var vnp_Name = "<%= session[:vnp_Name] %>"
-          document.getElementById("cls_bmt_showtitle").style.display = "none";
+          
+          if (vnp_Name == "") {
+            document.getElementById("cls_bmt_showtitle").style.display = "none";
           document.getElementById("cls_bmt_showtitlev").style.display = "none";
-          if (vnp_Name != "") {
-            document.getElementById("cls_bmt_showtitle").style.display = "block";
-            document.getElementById("cls_bmt_showtitlev").style.display = "block";
           }
         </script>
 </body>
