@@ -13,10 +13,10 @@ class AdminController < ApplicationController
      @dtBirthday = params[:dt_birthday]
 
      session[:strTitle] = @strTitle
-     session[:strContent] = @strContent
+    #  session[:strContent] = @strContent
      session[:nAmount] = @nAmount
      session[:dtBirthday] = @dtBirthday
-     redirect_to admin_path
+ 
   end
 
   def getImage
