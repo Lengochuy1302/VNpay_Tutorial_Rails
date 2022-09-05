@@ -16,7 +16,7 @@ class AdminController < ApplicationController
     #  session[:strContent] = @strContent
      session[:nAmount] = @nAmount
      session[:dtBirthday] = @dtBirthday
-     redirect_to admin_path
+     redirect_to '/admin'
  
   end
 
