@@ -55,7 +55,7 @@ class BodController < ApplicationController
   end
 
   def payment 
-    redirect_to get_payment_url("https://pure-refuge-24132.herokuapp.com/checkouts"), allow_other_host: true
+    redirect_to get_payment_url("http://127.0.0.1:3000/checkouts"), allow_other_host: true
   end
 
   def fallback
